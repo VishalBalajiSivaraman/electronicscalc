@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
   name = 'electronicscalc',         
   packages = ['electronicscalc'],   
-  version = '0.3',      
+  version = '0.4',      
   license='MIT',        
   description = 'This is the package that houses various functions which can be used to calculate values for problems involving circuit design , value of the components which are needed to construct the circuit and so on', 
   author = ['Vishal Balaji Sivaraman','Vigneshwar K R'],                
   author_email = 'vb.sivaraman_official@yahoo.com',     
   url = 'https://github.com/The-SocialLion/Electronics-calc',   
-  download_url = 'https://github.com/The-SocialLion/Electronics-calc/archive/v_03.tar.gz',    
+  download_url = 'https://github.com/The-SocialLion/Electronics-calc/archive/v_04.tar.gz',    
   keywords = ['electronics', 'calculator', 'Electronics-calculations','circuit-desighn','plot'],   
   install_requires=[           
           'numpy',
