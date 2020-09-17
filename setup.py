@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'electronics-calc',         # How you named your package folder (MyLib)
   packages = ['electronics-calc'],   # Chose the same as "name"
-  version = '1.0',      # Start with a small number and increase it with every change you make
+  version = '0.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'this is a package houses various steps templates which can be used to calculate values for problems involving desighn of circuits , verification of circuits and so on',   # Give a short description about your library
   author = 'Vishal Balaji Sivaraman',                   # Type in your name
