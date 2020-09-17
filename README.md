@@ -3,7 +3,7 @@ This is the package that houses various functions which can be used to calculate
 
 ### Developed by:
 
- Vishal Balaji Sivaraman (@The-SocialLion)
+ Vishal Balaji Sivaraman (@The-SocialLion),Vigneshwar K R (@ToastCoder)
 
 ### Installation:
 
@@ -19,7 +19,6 @@ pip install electronicscalc
 import  electronicscalc
 ```
 
-### Functions:
 
 
 
