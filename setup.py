@@ -5,7 +5,7 @@ setup(
   version = '0.2',      
   license='MIT',        
   description = 'This is the package that houses various functions which can be used to calculate values for problems involving circuit design , value of the components which are needed to construct the circuit and so on', 
-  author = ['Vishal Balaji Sivaraman','Vigneshwar K R']                
+  author = ['Vishal Balaji Sivaraman','Vigneshwar K R'],                
   author_email = 'vb.sivaraman_official@yahoo.com',     
   url = 'https://github.com/The-SocialLion/Electronics-calc',   
   download_url = 'https://github.com/The-SocialLion/Electronics-calc/archive/v_02.tar.gz',    
