@@ -1,7 +1,7 @@
 # Module name:electronicscalc
 # Short description: Electronicscalc (or) Electronics Calculator is apackage that houses the  functions which can simplify ,solve any problem related to designing of circuits,plotting graphs and much more...!
-# Developers:  Vishal Balaji Sivaraman (@The-SocialLion) 
-# Contact email address: vb.sivaraman_official@yahoo.com
+# Developers:  Vishal Balaji Sivaraman (@The-SocialLion) , Vigneshwar K R (@ToastCoder)
+# Contact email address: vb.sivaraman_official@yahoo.com , vicky.pcbasic@gmail.com
 # Modules required: numpy,pandas,mathplotlib
 
 # Command to install electronics-calc:
