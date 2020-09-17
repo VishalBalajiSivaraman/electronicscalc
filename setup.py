@@ -1,19 +1,19 @@
 from distutils.core import setup
 setup(
-  name = 'electronics-calc',         
-  packages = ['electronics-calc'],   
-  version = '0.2',      
+  name = 'electronicscalc',         
+  packages = ['electronicscalc'],   
+  version = '0.3',      
   license='MIT',        
   description = 'this is a package houses various steps templates which can be used to calculate values for problems involving design of circuits , verification of circuits and so on',   # Give a short description about your library
   author = 'Vishal Balaji Sivaraman',                   
   author_email = 'vb.sivaraman_official@yahoo.com',     
   url = 'https://github.com/The-SocialLion/Electronics-calc',   
-  download_url = 'https://github.com/The-SocialLion/Electronics-calc/archive/v_02.tar.gz',    
+  download_url = 'https://github.com/The-SocialLion/Electronics-calc/archive/v_03.tar.gz',    
   keywords = ['electronics', 'calculator', 'Electronics-calculations','circuit-desighn','plot'],   
   install_requires=[           
           'numpy',
           'pandas',
-          'matplotlib.pyplot'
+          'Matplotlib'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',      
