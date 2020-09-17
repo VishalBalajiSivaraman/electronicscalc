@@ -4,7 +4,7 @@ setup(
   packages = ['electronics-calc'],   
   version = '0.2',      
   license='MIT',        
-  description = 'this is a package houses various steps templates which can be used to calculate values for problems involving desighn of circuits , verification of circuits and so on',   # Give a short description about your library
+  description = 'this is a package houses various steps templates which can be used to calculate values for problems involving design of circuits , verification of circuits and so on',   # Give a short description about your library
   author = 'Vishal Balaji Sivaraman',                   
   author_email = 'vb.sivaraman_official@yahoo.com',     
   url = 'https://github.com/The-SocialLion/Electronics-calc',   
