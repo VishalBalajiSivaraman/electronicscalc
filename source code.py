@@ -1,3 +1,14 @@
+def plot_feedbackamp(a,b):
+  import matplotlib.pyplot as plt
+  import numpy as np
+  p=np.array(a)
+  q=np.array(b)
+  plt.title('Feedback Amplifier: gain vs frequency')
+  plt.plot(p,q,marker='o')
+  plt.xlabel('frequency')
+  plt.ylabel('gain')
+  plt.show()
+
 def gain_calc(Vo,Vi):
   import pandas as pd
   import numpy as np
