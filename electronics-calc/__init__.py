@@ -51,7 +51,7 @@ def gain_calc(Vo,Vi):
   dataset = pd.DataFrame({'Vo(Volts)': data[0,:], 'Gain': data[1,:], 'Gain(DB)': data[2,:]})
   print(dataset)
 
-def desighn_procedure(Rc,B,c,d):
+def design_procedure(Rc,B,c,d):
   Vcc=12
   Ve=1
   C1=0.1
