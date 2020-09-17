@@ -8,7 +8,7 @@ setup(
   author = 'Vishal Balaji Sivaraman',                   
   author_email = 'vb.sivaraman_official@yahoo.com',     
   url = 'https://github.com/The-SocialLion/Electronics-calc',   
-  download_url = 'https://github.com/The-SocialLion/Electronics-calc/archive/v_01.tar.gz',    
+  download_url = 'https://github.com/The-SocialLion/Electronics-calc/archive/v_02.tar.gz',    
   keywords = ['electronics', 'calculator', 'Electronics-calculations','circuit-desighn','plot'],   
   install_requires=[           
           'numpy',
