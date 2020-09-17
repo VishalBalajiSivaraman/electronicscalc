@@ -1,3 +1,14 @@
+def plot_rcphase(T,P):
+  import numpy as np
+  import matplotlib.pyplot as plt
+  plt.title("RC-phase shift amplifier")
+  plt.xlabel('Time in ms')
+  plt.ylabel('Amplitude in Volts')
+  plt.axis(P)
+  x=np.linspace(0,20,100)
+  plt.plot(x,np.sin(x+T))
+  plt.show()
+
 def rcphase_feedback(R,Rc,T,c):
   f=500
   r=R*1000
