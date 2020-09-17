@@ -111,10 +111,11 @@ def design(Rc,B,c,d):
       print("saturartion reagion")
       Ic=(Vcc-Ve)/Rc
       Icq=Ic/2
-      IB=(Icq/B)*1000
-      IE=IB+Icq
-      R1=(Vcc-(Vbe+Ve))/(11*IB)
-      R2=(Vbe+Ve)/(10*IB)
+      Ib=(Icq/B)
+      IB=Ib*1000
+      IE=Ib+Icq
+      R1=((Vcc-(Vbe+Ve))/(11*Ib))
+      R2=((Vbe+Ve)/(10*Ib))
       Re=(Ve/IE)*1000
       print("circuit desighn.....")
       print("R1*10^3,R2*10^3,Re,C1*10^-6,C2*10^-6,BC1*10^-6 OR Bc2*10^-6 :",R1,R2,Re,C1,C2,BC1,BC2)
