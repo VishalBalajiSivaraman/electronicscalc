@@ -1,15 +1,35 @@
-def plot_rcphase(T,P):
-  import numpy as np
-  import matplotlib.pyplot as plt
-  plt.title("RC-phase shift amplifier")
+# Module name:electronics-calc
+# Short description: Electronics-calc (or) Electronics Calculator is apackage that houses the  functions which can simplify ,solve any problem related to designing of circuits,plotting graphs and much more...!
+# Developers:  Vishal Balaji Sivaraman (@The-SocialLion) 
+# Contact email address: vb.sivaraman_official@yahoo.com
+# Modules required: numpy,pandas,mathplotlib
+
+# Command to install electronics-calc:
+# >>> pip install electronics-calc
+
+# Essential modules
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# plot_rco() - Sketches the graph between the amplitude and time as per the given input data.
+# Syntax: plot_rco(T,P)
+# T:Time period , P: is a list which consists of the x and y values which are given in the format [Xmin,Xmax,Ymin,Ymax]which are inturn used for plotting the scale
+# Return type: graph
+# Note - the amplitude of the waveform doesnt change due external factors so we assume the amplitude changes as per the time shifting of the sine waveform
+def plot_rco(T,P):
+  plt.title("RC-phase shift oscillator")
   plt.xlabel('Time in ms')
   plt.ylabel('Amplitude in Volts')
   plt.axis(P)
   x=np.linspace(0,20,100)
   plt.plot(x,np.sin(x+T))
   plt.show()
-
-def rcphase_feedback(R,Rc,T,c):
+# rcphase_fb() - Returns the calculated and output frequency based on the given data.
+# Syntax: rcphase_fb(R,Rc,T,c)
+# R:feedback resistor,Rc:collector resistor,T:Time period,c:Condition
+# Return type: float,Boolean
+def rcphase_fb(R,Rc,T,c):
   f=500
   r=R*1000
   rc=Rc*1000
@@ -28,10 +48,12 @@ def rcphase_feedback(R,Rc,T,c):
     else:
       return False
     break
-
-def plot_feedbackamp(a,b):
-  import matplotlib.pyplot as plt
-  import numpy as np
+# plot_fba() - Sketches the graph between the Gain and Frequency as per the given input data.
+# Syntax: plot_fba(a,b)
+# a:list of all frequncies,b:list of all gain values in DB
+# Return type: graph
+# Note:Before executing this module do kindly check if the length of both lists are same 
+def plot_fba(a,b):
   p=np.array(a)
   q=np.array(b)
   plt.title('Feedback Amplifier: gain vs frequency')
@@ -39,10 +61,12 @@ def plot_feedbackamp(a,b):
   plt.xlabel('frequency')
   plt.ylabel('gain')
   plt.show()
-
+# gain_calc()- Tabulates the results in a data frame as per the given data.
+# Syntax: gain_calc(Vo,Vi)
+# Vo:list of all the output voltages recorded during experiment,Vi:Input voltage recorded during the experiment
+# Return type: Tabulation(Data Frame)
+# Note:The input voltage when once recorded would be the same while recording the output values
 def gain_calc(Vo,Vi):
-  import pandas as pd
-  import numpy as np
   Vo=np.array(Vo)
   Gain=Vo/Vi
   g=np.log10(Gain)
@@ -50,8 +74,11 @@ def gain_calc(Vo,Vi):
   data = np.array([Vo,Gain,gain])
   dataset = pd.DataFrame({'Vo(Volts)': data[0,:], 'Gain': data[1,:], 'Gain(DB)': data[2,:]})
   print(dataset)
-
-def design_procedure(Rc,B,c,d):
+# design() - Sketches the graph between the Gain and Frequency as per the given input data.
+# Syntax: design(Rc,B,c,d)
+# Rc:Collector resistance,B:Gain of transistor,c:Condition,d:Condition
+# Return type: float
+def design(Rc,B,c,d):
   Vcc=12
   Ve=1
   C1=0.1
