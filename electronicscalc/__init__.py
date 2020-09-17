@@ -96,8 +96,9 @@ def design(Rc,B,c,d):
       print("saturartion reagion")
       Ic=(Vcc-Ve)/Rc
       Icq=Ic/2
-      IB=(Icq/B)*1000
-      IE=(IB+Icq)
+      Ib=(Icq/B)
+      IB=Ib*1000
+      IE=(Ib+Icq)
       R1=(Vcc-(Vbe+Ve))/(11*IB)
       R2=(Vbe+Ve)/(10*IB)
       Re=(Ve/IE)*1000
