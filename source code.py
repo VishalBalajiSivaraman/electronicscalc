@@ -1,3 +1,13 @@
+def gain_calc(Vo,Vi,c):
+  import math
+  if c==1:
+    d=Vo/Vi
+    gain=20*math.log(d,10)
+    print("gain in DB :",gain)
+  else:
+    gain=Vo/Vi
+    print("gain :",gain)
+
 def desighn_feedbackamp(Rc,B,c,d):
   Vcc=12
   Ve=1
@@ -40,4 +50,5 @@ def desighn_feedbackamp(Rc,B,c,d):
       print("R1*10^3,R2*10^3,Re,C1*10^-6,C2*10^-6,BC1*10^-6 OR Bc2*10^-6 :",R1,R2,Re,C1,C2,BC1,BC2)
       print("calculations....")
       print("Ic*10^-3,IB*10^-6,Icq*10^-3,Ie*10^-3:",Ic,IB,Icq,IE)
+      
 
