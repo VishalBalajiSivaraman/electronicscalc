@@ -1,12 +1,13 @@
-def gain_calc(Vo,Vi,c):
-  import math
-  if c==1:
-    d=Vo/Vi
-    gain=20*math.log(d,10)
-    print("gain in DB :",gain)
-  else:
-    gain=Vo/Vi
-    print("gain :",gain)
+def gain_calc(Vo,Vi):
+  import pandas as pd
+  import numpy as np
+  Vo=np.array(Vo)
+  Gain=Vo/Vi
+  g=np.log10(Gain)
+  gain=20*g
+  data = np.array([Vo,Gain,gain])
+  dataset = pd.DataFrame({'Vo(Volts)': data[0,:], 'Gain': data[1,:], 'Gain(DB)': data[2,:]})
+  print(dataset)
 
 def desighn_feedbackamp(Rc,B,c,d):
   Vcc=12
