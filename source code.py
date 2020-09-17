@@ -1,3 +1,17 @@
+def rcphase_feedback(R,Rc):
+  f=500
+  r=R*1000
+  rc=Rc*1000
+  C=0.0000001
+  g=(((6+(4*rc/r))**0.5)*2*3.14*r*C)
+  F=1/g
+  if F < f:
+    print(F)
+    return True
+  else:
+    print(F)
+    return False
+
 def plot_feedbackamp(a,b):
   import matplotlib.pyplot as plt
   import numpy as np
