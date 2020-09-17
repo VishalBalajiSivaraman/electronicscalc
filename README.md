@@ -10,13 +10,13 @@ This is the package that houses various functions which can be used to calculate
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install electronics-calc.
 
 ```bash
-pip install electronics-calc
+pip install electronicscalc
 ```
 
 ### Importing  electronics-calc to your program:
 
 ```python
-import  electronics-calc
+import  electronicscalc
 ```
 
 ### Functions:
