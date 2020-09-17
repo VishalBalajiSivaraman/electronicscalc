@@ -1,5 +1,5 @@
 # Electronics-calc
-This is the package that houses various functions which can be used to calculate values for problems involving circuit desighn , value of the components which are needed to construct the circuit and so on
+This is the package that houses various functions which can be used to calculate values for problems involving circuit design , value of the components which are needed to construct the circuit and so on
 
 ### Developed by:
 
