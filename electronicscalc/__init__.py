@@ -13,6 +13,28 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy as sp 
 
+
+def hartley_fbo(l1,l2,T,c):
+  L1=l1/1000
+  L2=l2/1000
+  f=5000
+  L=L1+L2
+  C=0.1*10**-6
+  if c==1:
+    fr=(1/T)*(10**6)
+  else:
+    fr=(1/T)*(10**3)
+  g=(2*3.14*((L*C)**0.5))
+  F=1/g
+  while F < f:
+    print("calculated frequency",F)
+    print("Output frequency",fr)
+    if fr < f or fr==f:
+          return True
+    else:
+         return False
+         break
+
 def plot_sta(a,b):
   p=np.array(a)
   q=np.array(b)
