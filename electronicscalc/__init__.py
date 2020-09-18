@@ -11,6 +11,20 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import scipy as sp 
+
+def plot_sta(a,b):
+  p=np.array(a)
+  q=np.array(b)
+  plt.title('Single Tuned Amplifier: gain vs frequency')
+  x=np.linspace(p.min(),p.max(),100)
+  a_BSpline=sp.interpolate.make_interp_spline(p,q)
+  y = a_BSpline(x)
+  plt.plot(x,y)
+  plt.xlabel('frequency in KHz')
+  plt.ylabel('gain in DB')
+  plt.show()
+
 
 # plot_rco() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_rco(T,P)
