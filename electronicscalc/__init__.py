@@ -65,7 +65,7 @@ def plot_rco(T,P):
 # Syntax: rcphase_fb(R,Rc,T,c)
 # R:feedback resistor,Rc:collector resistor,T:Time period,c:Condition
 # Return type: float,Boolean
-def rcphase_fb(R,Rc,T,c):
+def rcphase_fbo(R,Rc,T,c):
   f=500
   r=R*1000
   rc=Rc*1000
