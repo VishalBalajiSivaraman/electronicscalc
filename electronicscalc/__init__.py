@@ -35,7 +35,7 @@ def hartley_fbo(l1,l2,T,c):
          return False
          break
 
-def plot_sta(a,b):
+def plot_ta(a,b):
   p=np.array(a)
   q=np.array(b)
   plt.title('Single Tuned Amplifier: gain vs frequency')
