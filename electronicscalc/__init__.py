@@ -49,17 +49,22 @@ def plot_ta(a,b):
 
 
 # plot_rco() - Sketches the graph between the amplitude and time as per the given input data.
-# Syntax: plot_rco(T,P)
-# T:Time period , P: is a list which consists of the x and y values which are given in the format [Xmin,Xmax,Ymin,Ymax]which are inturn used for plotting the scale
+# Syntax: plot_rco(T,A)
+# T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] 
 # Return type: graph
-# Note - the amplitude of the waveform doesnt change due external factors so we assume the amplitude changes as per the time shifting of the sine waveform
-def plot_rco(T,P):
-  plt.title("RC-phase shift oscillator")
+# Note-Before executing this module do kindly check if the length of both lists are same 
+def plot_rco(T,A):
+  p=np.array(T)
+  q=np.array(A)/2
+  plt.title('RC-phase shift oscillator: amplitude vs time')
+  x=np.linspace(p.min(),p.max(),100)
+  a_BSpline=sp.interpolate.make_interp_spline(p,q)
+  y=a_BSpline(x) 
+  plt.plot(x,y, marker='^',label="Generated Graph")
+  plt.plot(p,q,marker='o',label="Actual Graph")
+  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
   plt.xlabel('Time in ms')
-  plt.ylabel('Amplitude in Volts')
-  plt.axis(P)
-  x=np.linspace(0,20,100)
-  plt.plot(x,np.sin(x+T))
+  plt.ylabel('Amplitude in volts')
   plt.show()
 # rcphase_fb() - Returns the calculated and output frequency based on the given data.
 # Syntax: rcphase_fb(R,Rc,T,c)
