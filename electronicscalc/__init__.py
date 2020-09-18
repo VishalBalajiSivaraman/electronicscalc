@@ -53,10 +53,10 @@ def plot_ta(a,b):
 # T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] 
 # Return type: graph
 # Note-Before executing this module do kindly check if the length of both lists are same 
-def plot_rco(T,A):
+def plot_oscillator(T,A):
   p=np.array(T)
   q=np.array(A)/2
-  plt.title('RC-phase shift oscillator: amplitude vs time')
+  plt.title('Oscillator-plot : amplitude vs time')
   x=np.linspace(p.min(),p.max(),100)
   a_BSpline=sp.interpolate.make_interp_spline(p,q)
   y=a_BSpline(x) 
