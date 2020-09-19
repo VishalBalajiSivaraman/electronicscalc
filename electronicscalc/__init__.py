@@ -14,6 +14,57 @@ import matplotlib.pyplot as plt
 import scipy as sp 
 from scipy import interpolate as ie
 
+def plot_clamper(a,b,c,d):
+  if d==0:     
+    p=np.array(b)
+    q=np.array(a)
+    z=np.array(c)
+    plt.title('positive clamper: amplitude vs time')
+    x=np.linspace(p.min(),p.max(),100)
+    a_BSpline = ie.make_interp_spline(p,q)
+    y=a_BSpline(x) 
+    plt.plot(x,y,label="Generated Graph")
+    plt.plot(p,q,marker='o',label="your graph")
+    plt.plot(p,z,marker='x',label=' Dc load line')
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.xlabel('Time in ms')
+    plt.ylabel('Amplitude in volts')
+    plt.show()
+  elif d==1:
+    e = [i * -1 for i in c]
+    f=  [j * -1 for j in a]
+    p=np.array(b)
+    q=np.array(f)
+    z=np.array(e)
+    plt.title('negative clipper: amplitude vs time')
+    x=np.linspace(p.min(),p.max(),100)
+    a_BSpline = ie.make_interp_spline(p,q)
+    y=a_BSpline(x) 
+    plt.plot(x,y,label="Generated Graph")
+    plt.plot(p,q,marker='o',label="your graph")
+    plt.plot(p,z,marker='x',label=' Dc load line')
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.xlabel('Time in ms')
+    plt.ylabel('Amplitude in volts')
+    plt.show()
+  else:
+   p=np.array(b)
+   q=np.array(a)
+   plt.title('clipper plot: amplitude vs time')
+   x=np.linspace(p.min(),p.max(),100)
+   a_BSpline = ie.make_interp_spline(p,q)
+   y=a_BSpline(x) 
+   plt.plot(x,y,label="Generated Graph")
+   plt.plot(p,q,marker='o',label="your graph")
+   plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+   plt.xlabel('Time in ms')
+   plt.ylabel('Amplitude in volts')
+   plt.show()
+
+
+
+
+
 def plot_clipper(a,b,c,d):
   if d==0:     
     p=np.array(b)
