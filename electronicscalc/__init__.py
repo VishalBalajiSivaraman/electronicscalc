@@ -13,26 +13,59 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy as sp 
 from scipy import interpolate as ie
-def plot_clipper(A,T,c):
-  import numpy as np
-  import pandas as pd
-  import matplotlib.pyplot as plt
-  import scipy as sp 
-  from scipy import interpolate as ie
-  p=np.array(b)
-  q=np.array(a)/2
-  z=np.array(c)
-  plt.title('clipper plot: amplitude vs time')
-  x=np.linspace(p.min(),p.max(),100)
-  a_BSpline = ie.make_interp_spline(p,q)
-  y=a_BSpline(x) 
-  plt.plot(x,y,label="Generated Graph")
-  plt.plot(p,q,marker='o',label="your graph")
-  plt.plot(p,z,marker='x',label='Clipped waveform')
-  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
-  plt.xlabel('Time in ms')
-  plt.ylabel('Amplitude in volts')
-  plt.show()
+
+def plot_clipper(a,b,c,d):
+  if d==0:     
+    p=np.array(b)
+    q=np.array(a)/2
+    z=np.array(c)
+    plt.title('positive clipper: amplitude vs time')
+    x=np.linspace(p.min(),p.max(),100)
+    a_BSpline = ie.make_interp_spline(p,q)
+    y=a_BSpline(x) 
+    plt.plot(x,y,label="Generated Graph")
+    plt.plot(p,q,marker='o',label="your graph")
+    plt.plot(p,z,marker='x',label=' positive Clipped waveform')
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.xlabel('Time in ms')
+    plt.ylabel('Amplitude in volts')
+    plt.show()
+  elif d==1:
+    e = [i * -1 for i in c]
+    p=np.array(b)
+    q=np.array(a)/2
+    z=np.array(e)
+    plt.title('negative clipper: amplitude vs time')
+    x=np.linspace(p.min(),p.max(),100)
+    a_BSpline = ie.make_interp_spline(p,q)
+    y=a_BSpline(x) 
+    plt.plot(x,y,label="Generated Graph")
+    plt.plot(p,q,marker='o',label="your graph")
+    plt.plot(p,z,marker='x',label=' negative Clipped waveform')
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.xlabel('Time in ms')
+    plt.ylabel('Amplitude in volts')
+    plt.show()
+  else:
+   p=np.array(b)
+   q=np.array(a)/2
+   plt.title('clipper plot: amplitude vs time')
+   x=np.linspace(p.min(),p.max(),100)
+   a_BSpline = ie.make_interp_spline(p,q)
+   y=a_BSpline(x) 
+   plt.plot(x,y,label="Generated Graph")
+   plt.plot(p,q,marker='o',label="your graph")
+   plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+   plt.xlabel('Time in ms')
+   plt.ylabel('Amplitude in volts')
+   plt.show()
+
+
+T=[0,1,2,3]
+a=[0,4,-4,4]
+c=[1.6,1.6,1.6,1.6]
+d=1
+plot_clipper(a,T,c,d)
 
 
 def hartley_fbo(l1,l2,T,c):
