@@ -12,6 +12,27 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import scipy as sp 
+from scipy import interpolate as ie
+def plot_clipper(A,T,c):
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  import scipy as sp 
+  from scipy import interpolate as ie
+  p=np.array(b)
+  q=np.array(a)/2
+  z=np.array(c)
+  plt.title('clipper plot: amplitude vs time')
+  x=np.linspace(p.min(),p.max(),100)
+  a_BSpline = ie.make_interp_spline(p,q)
+  y=a_BSpline(x) 
+  plt.plot(x,y,label="Generated Graph")
+  plt.plot(p,q,marker='o',label="your graph")
+  plt.plot(p,z,marker='x',label='Clipped waveform')
+  plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+  plt.xlabel('Time in ms')
+  plt.ylabel('Amplitude in volts')
+  plt.show()
 
 
 def hartley_fbo(l1,l2,T,c):
@@ -58,7 +79,7 @@ def plot_oscillator(T,A):
   q=np.array(A)/2
   plt.title('Oscillator-plot : amplitude vs time')
   x=np.linspace(p.min(),p.max(),100)
-  a_BSpline=sp.interpolate.make_interp_spline(p,q)
+  a_BSpline=ie.make_interp_spline(p,q)
   y=a_BSpline(x) 
   plt.plot(x,y, marker='^',label="Generated Graph")
   plt.plot(p,q,marker='o',label="Actual Graph")
