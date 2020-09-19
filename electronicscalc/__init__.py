@@ -78,6 +78,8 @@ def plot_clipper(a,b,c,d):
     plt.plot(p,q,marker='o',label="your graph")
     plt.plot(p,z,marker='x',label=' positive Clipped waveform')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.grid(True,which='both')
+    plt.axhline(y=0, color='k')
     plt.xlabel('Time in ms')
     plt.ylabel('Amplitude in volts')
     plt.show()
@@ -94,6 +96,8 @@ def plot_clipper(a,b,c,d):
     plt.plot(p,q,marker='o',label="your graph")
     plt.plot(p,z,marker='x',label=' negative Clipped waveform')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.grid(True,which='both')
+    plt.axhline(y=0, color='k')
     plt.xlabel('Time in ms')
     plt.ylabel('Amplitude in volts')
     plt.show()
@@ -107,16 +111,11 @@ def plot_clipper(a,b,c,d):
    plt.plot(x,y,label="Generated Graph")
    plt.plot(p,q,marker='o',label="your graph")
    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+   plt.grid(True,which='both')
+   plt.axhline(y=0, color='k')
    plt.xlabel('Time in ms')
    plt.ylabel('Amplitude in volts')
    plt.show()
-
-
-T=[0,1,2,3]
-a=[0,4,-4,4]
-c=[1.6,1.6,1.6,1.6]
-d=1
-plot_clipper(a,T,c,d)
 
 
 def hartley_fbo(l1,l2,T,c):
@@ -154,20 +153,22 @@ def plot_ta(a,b):
 
 
 # plot_rco() - Sketches the graph between the amplitude and time as per the given input data.
-# Syntax: plot_rco(T,A)
+# Syntax: plot_rco(A,T)
 # T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] 
 # Return type: graph
 # Note-Before executing this module do kindly check if the length of both lists are same 
-def plot_oscillator(T,A):
+def plot_oscillator(A,T):
   p=np.array(T)
   q=np.array(A)/2
   plt.title('Oscillator-plot : amplitude vs time')
   x=np.linspace(p.min(),p.max(),100)
   a_BSpline=ie.make_interp_spline(p,q)
   y=a_BSpline(x) 
-  plt.plot(x,y, marker='^',label="Generated Graph")
+  plt.plot(x,y,label="Generated Graph")
   plt.plot(p,q,marker='o',label="Actual Graph")
   plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+  plt.grid(True,which='both')
+  plt.axhline(y=0, color='k')
   plt.xlabel('Time in ms')
   plt.ylabel('Amplitude in volts')
   plt.show()
