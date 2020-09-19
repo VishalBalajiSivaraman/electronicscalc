@@ -27,12 +27,14 @@ def plot_clamper(a,b,c,d):
     plt.plot(p,q,marker='o',label="your graph")
     plt.plot(p,z,marker='x',label=' Dc load line')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.grid(True,which='both')
+    plt.axhline(y=0, color='k')
     plt.xlabel('Time in ms')
     plt.ylabel('Amplitude in volts')
     plt.show()
   elif d==1:
     e = [i * -1 for i in c]
-    f=  [j * -1 for j in a]
+    f= [j * -1 for j in a ]
     p=np.array(b)
     q=np.array(f)
     z=np.array(e)
@@ -44,6 +46,8 @@ def plot_clamper(a,b,c,d):
     plt.plot(p,q,marker='o',label="your graph")
     plt.plot(p,z,marker='x',label=' Dc load line')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    plt.grid(True,which='both')
+    plt.axhline(y=0, color='k')
     plt.xlabel('Time in ms')
     plt.ylabel('Amplitude in volts')
     plt.show()
@@ -57,9 +61,12 @@ def plot_clamper(a,b,c,d):
    plt.plot(x,y,label="Generated Graph")
    plt.plot(p,q,marker='o',label="your graph")
    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+   plt.grid(True,which='both')
+   plt.axhline(y=0, color='k')
    plt.xlabel('Time in ms')
    plt.ylabel('Amplitude in volts')
    plt.show()
+
 
 
 
