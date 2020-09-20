@@ -14,6 +14,18 @@ import matplotlib.pyplot as plt
 import scipy as sp 
 from scipy import interpolate as ie
 
+
+def plot_astable_multivibrator(A,T):
+  p=np.array(T)
+  q=np.array(A)
+  plt.title('Astable Multivibrator: Amplitude vs Time')
+  plt.plot(p,q,marker='o')
+  plt.grid(True,which='both')
+  plt.axhline(y=0, color='k')
+  plt.xlabel('Time in ms')
+  plt.ylabel('Amplitude in volts')
+  plt.show()
+
 def plot_clamper(a,b,c,d):
   if d==0:     
     p=np.array(b)
@@ -213,13 +225,15 @@ def rcphase_fbo(R,Rc,T,c):
 # a:list of all frequncies,b:list of all gain values in DB
 # Return type: graph
 # Note:Before executing this module do kindly check if the length of both lists are same 
-def plot_fba(a,b):
-  p=np.array(a)
-  q=np.array(b)
+def plot_feedback_amplifier(G,F):
+  p=np.array(F)
+  q=np.array(G)
   plt.title('Feedback Amplifier: gain vs frequency')
   plt.plot(p,q,marker='o')
-  plt.xlabel('frequency')
-  plt.ylabel('gain')
+  plt.grid(True,which='both')
+  plt.axhline(y=0, color='k')
+  plt.xlabel('frequency in KHz')
+  plt.ylabel('Gain in DB')
   plt.show()
 # gain_calc()- Tabulates the results in a data frame as per the given data.
 # Syntax: gain_calc(Vo,Vi)
