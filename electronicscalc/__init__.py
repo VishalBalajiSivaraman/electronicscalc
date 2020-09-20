@@ -146,18 +146,24 @@ def hartley_fbo(l1,l2,T,c):
          return False
          break
 
-def plot_ta(a,b):
-  p=np.array(a)
-  q=np.array(b)
+def plot_tuned_amplifier(G,F):
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  import scipy as sp 
+  from scipy import interpolate as ie
+  p=np.array(F)
+  q=np.array(G)
   plt.title('Single Tuned Amplifier: gain vs frequency')
   x=np.linspace(p.min(),p.max(),100)
   a_BSpline=sp.interpolate.make_interp_spline(p,q)
   y = a_BSpline(x)
   plt.plot(x,y)
+  plt.grid(True,which='both')
+  plt.axhline(y=0, color='k')
   plt.xlabel('frequency in KHz')
   plt.ylabel('gain in DB')
   plt.show()
-
 
 # plot_rco() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_rco(A,T)
