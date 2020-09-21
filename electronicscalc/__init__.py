@@ -34,7 +34,12 @@ def plot_inverting_opamplifier(A,T):
   plt.xlabel('Time in ms')
   plt.ylabel('Amplitude in volts')
   plt.show()
-
+  
+# plot_astable_multivibrator() - Sketches the graph between the amplitude and time as per the given input data.
+# Syntax: plot_astable_multivibrator(A,T)
+# T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] 
+# Return type: graph
+# Note-Before executing this module do kindly check if the length of both lists are same 
 def plot_astable_multivibrator(A,T):
   p=np.array(T)
   q=np.array(A)
@@ -45,12 +50,17 @@ def plot_astable_multivibrator(A,T):
   plt.xlabel('Time in ms')
   plt.ylabel('Amplitude in volts')
   plt.show()
-
-def plot_clamper(a,b,c,d):
-  if d==0:     
-    p=np.array(b)
-    q=np.array(a)
-    z=np.array(c)
+ 
+# plot_clamper() - Sketches the graph between the amplitude and time as per the given input data.
+# Syntax: plot_clamper(A,T,I,c)
+# A: is a list of amplitudes given in the format as [+A,-A,+A ...] , T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....]  , I:is a list of amplitudes of the input signal given in the format as [+A,-A,+A ...] ,c: condition 
+# Return type: graph
+# Note-Before executing this module do kindly check if the length of both lists are same 
+def plot_clamper(A,T,I,c):
+  if c==0:     
+    p=np.array(T)
+    q=np.array(A)
+    z=np.array(I)
     plt.title('positive clamper: amplitude vs time')
     x=np.linspace(p.min(),p.max(),100)
     a_BSpline = ie.make_interp_spline(p,q)
@@ -64,10 +74,10 @@ def plot_clamper(a,b,c,d):
     plt.xlabel('Time in ms')
     plt.ylabel('Amplitude in volts')
     plt.show()
-  elif d==1:
-    e = [i * -1 for i in c]
-    f= [j * -1 for j in a ]
-    p=np.array(b)
+  elif c==1:
+    e = [i * -1 for i in I]
+    f=  [j * -1 for j in A]
+    p=np.array(T)
     q=np.array(f)
     z=np.array(e)
     plt.title('negative clipper: amplitude vs time')
@@ -84,8 +94,8 @@ def plot_clamper(a,b,c,d):
     plt.ylabel('Amplitude in volts')
     plt.show()
   else:
-   p=np.array(b)
-   q=np.array(a)
+   p=np.array(T)
+   q=np.array(A)
    plt.title('clipper plot: amplitude vs time')
    x=np.linspace(p.min(),p.max(),100)
    a_BSpline = ie.make_interp_spline(p,q)
@@ -100,15 +110,16 @@ def plot_clamper(a,b,c,d):
    plt.show()
 
 
-
-
-
-
-def plot_clipper(a,b,c,d):
-  if d==0:     
-    p=np.array(b)
-    q=np.array(a)/2
-    z=np.array(c)
+# plot_clipper() - Sketches the graph between the amplitude and time as per the given input data.
+# Syntax: plot_clipper(A,T,I,c)
+#  A: is a list of amplitudes given in the format as [+A,-A,+A ...] , T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....]  , I:is a list of amplitudes of the input signal given in the format as [+A,-A,+A ...] ,c: condition 
+# Return type: graph
+# Note-Before executing this module do kindly check if the length of both lists are same 
+def plot_clipper(A,T,I,c):
+  if c==0:     
+    p=np.array(T)
+    q=np.array(A)/2
+    z=np.array(I)
     plt.title('positive clipper: amplitude vs time')
     x=np.linspace(p.min(),p.max(),100)
     a_BSpline = ie.make_interp_spline(p,q)
@@ -122,10 +133,10 @@ def plot_clipper(a,b,c,d):
     plt.xlabel('Time in ms')
     plt.ylabel('Amplitude in volts')
     plt.show()
-  elif d==1:
+  elif c==1:
     e = [i * -1 for i in c]
-    p=np.array(b)
-    q=np.array(a)/2
+    p=np.array(T)
+    q=np.array(A)/2
     z=np.array(e)
     plt.title('negative clipper: amplitude vs time')
     x=np.linspace(p.min(),p.max(),100)
@@ -141,8 +152,8 @@ def plot_clipper(a,b,c,d):
     plt.ylabel('Amplitude in volts')
     plt.show()
   else:
-   p=np.array(b)
-   q=np.array(a)/2
+   p=np.array(T)
+   q=np.array(A)/2
    plt.title('clipper plot: amplitude vs time')
    x=np.linspace(p.min(),p.max(),100)
    a_BSpline = ie.make_interp_spline(p,q)
@@ -155,8 +166,11 @@ def plot_clipper(a,b,c,d):
    plt.xlabel('Time in ms')
    plt.ylabel('Amplitude in volts')
    plt.show()
-
-
+    
+# hartley_fbo() - Sketches the graph between the amplitude and time as per the given input data.
+# Syntax: hartley_fbo(l1,l2,T,c)
+# l1:value of inductor1 ,l2:value of inductor2 ,T:time interval ,c:condition
+# Return type: float,boolean
 def hartley_fbo(l1,l2,T,c):
   L1=l1/1000
   L2=l2/1000
@@ -177,7 +191,12 @@ def hartley_fbo(l1,l2,T,c):
     else:
          return False
          break
-
+        
+# plot_tuned_amplifier() - Sketches the graph between the amplitude and time as per the given input data.
+# Syntax: plot_tuned_amplifier(G,F)
+# G:is a list of all the Gain values in DB , F:is a list of all the Frequencies
+# Return type: graph
+# Note-Before executing this module do kindly check if the length of both lists are same 
 def plot_tuned_amplifier(G,F):
   import numpy as np
   import pandas as pd
@@ -186,15 +205,15 @@ def plot_tuned_amplifier(G,F):
   from scipy import interpolate as ie
   p=np.array(F)
   q=np.array(G)
-  plt.title('Single Tuned Amplifier: gain vs frequency')
+  plt.title('Single Tuned Amplifier: Gain vs Frequency')
   x=np.linspace(p.min(),p.max(),100)
   a_BSpline=sp.interpolate.make_interp_spline(p,q)
   y = a_BSpline(x)
   plt.plot(x,y)
   plt.grid(True,which='both')
   plt.axhline(y=0, color='k')
-  plt.xlabel('frequency in KHz')
-  plt.ylabel('gain in DB')
+  plt.xlabel('Frequency in KHz')
+  plt.ylabel('Gain in DB')
   plt.show()
 
 # plot_rco() - Sketches the graph between the amplitude and time as per the given input data.
@@ -217,8 +236,8 @@ def plot_oscillator(A,T):
   plt.xlabel('Time in ms')
   plt.ylabel('Amplitude in volts')
   plt.show()
-# rcphase_fb() - Returns the calculated and output frequency based on the given data.
-# Syntax: rcphase_fb(R,Rc,T,c)
+# rcphase_fbo() - Returns the calculated and output frequency based on the given data.
+# Syntax: rcphase_fbo(R,Rc,T,c)
 # R:feedback resistor,Rc:collector resistor,T:Time period,c:Condition
 # Return type: float,Boolean
 def rcphase_fbo(R,Rc,T,c):
@@ -240,9 +259,9 @@ def rcphase_fbo(R,Rc,T,c):
     else:
       return False
     break
-# plot_fba() - Sketches the graph between the Gain and Frequency as per the given input data.
-# Syntax: plot_fba(a,b)
-# a:list of all frequncies,b:list of all gain values in DB
+# plot_feedback_amplifier() - Sketches the graph between the Gain and Frequency as per the given input data.
+# Syntax: plot_feedback_amplifier(G,F)
+# F:list of all frequncies,G:list of all gain values in DB
 # Return type: graph
 # Note:Before executing this module do kindly check if the length of both lists are same 
 def plot_feedback_amplifier(G,F):
