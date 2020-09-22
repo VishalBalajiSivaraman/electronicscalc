@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import scipy as sp 
 from scipy import interpolate as ie
 
-# plot_opamplifier(a) - Sketches the graph between the amplitude and time as per the given input data.
+# plot_opamplifier() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_opamplifier(A,T,c)
 # T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] ,c:condition
 # Return type: graph
