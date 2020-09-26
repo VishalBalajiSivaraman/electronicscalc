@@ -14,7 +14,8 @@ setup(
           'numpy',
           'pandas',
           'Matplotlib',
-          'SciPy'
+          'SciPy',
+          'math'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',      
