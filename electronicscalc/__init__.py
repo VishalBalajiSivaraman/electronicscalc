@@ -14,6 +14,18 @@ import matplotlib.pyplot as plt
 import scipy as sp 
 from scipy import interpolate as ie
 
+def gain_differentialopamp(v1,v2,v,c):
+    import math as mt
+    if c==1:
+      print("differential mode")
+      vd1=abs(v2-v1)
+      Ad=(v/vd1)
+      print("Differential mode gain in DB: ",Ad)
+    else:
+      print("common mode")
+      vc1=(abs(v1+v2)/2)
+      Ac=(v/vc1)
+      print("Common mode gain in DB :",Ac)
 def gain_opamp(Rf,Ri,g,c):
   if c==1:
     Ri=Ri*1000
