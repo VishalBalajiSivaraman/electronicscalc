@@ -14,6 +14,26 @@ import matplotlib.pyplot as plt
 import scipy as sp 
 from scipy import interpolate as ie
 
+def gain_opamp(Rf,Ri,g,c):
+  if c==1:
+    Ri=Ri*1000
+    Rf=Rf*1000
+    G=-1*(Rf/Ri)
+    print("calculated gain - inverting mode",abs(G))
+    if (g<abs(G)) or (g==abs(G)):
+      return True
+    else:
+      return False
+  else:
+    Ri=Ri*1000
+    Rf=Rf*1000
+    G=1+(Rf/Ri)
+    print("calculated gain - non-inverting mode",abs(G))
+    if (g<abs(G)) or (g==abs(G)):
+      return True
+    else:
+      return False
+
 # plot_opamplifier() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_opamplifier(A,T,c)
 # T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] ,c:condition
