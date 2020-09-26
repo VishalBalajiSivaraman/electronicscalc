@@ -13,6 +13,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy as sp 
 from scipy import interpolate as ie
+import math as mt
 
 def gain_differentialopamp(v1,v2,v,c):
     import math as mt
