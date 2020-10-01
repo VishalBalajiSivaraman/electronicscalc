@@ -15,6 +15,12 @@ import scipy as sp
 from scipy import interpolate as ie
 import math as mt
 
+def cmrr_opamp(Ad,Ac):
+  A=abs(Ad/Ac)
+  print("CMRR is ",A)
+  cmrr=20*(mt.log10(A))
+  print("CMRR in DB is",cmrr)
+
 def gain_differentialopamp(v1,v2,v,c):
     import math as mt
     if c==1:
