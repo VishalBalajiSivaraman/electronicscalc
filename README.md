@@ -8,9 +8,9 @@ Under Development (Early release)
 
 ### Developed by:
 
- Vishal Balaji Sivaraman (@The-SocialLion)
+ [Vishal Balaji Sivaraman](https://github.com/TheSocialLion)
  
- Vigneshwar K R (@ToastCoder)
+ [Vigneshwar K R](https://github.com/ToastCoder)
 
 ### Installation:
 
