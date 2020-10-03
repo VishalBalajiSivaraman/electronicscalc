@@ -1,26 +1,26 @@
-# Electronics-calc
-This is the package that houses various functions which can be used to calculate values for problems involving circuit design , value of the components which are needed to construct the circuit and so on
+# ElectronicsCalc
+
+This is the package that houses various functions which can be used to calculate values for problems involving circuit design , value of the components which are needed to construct the circuit and so on.
 
 ### Developed by:
 
- Vishal Balaji Sivaraman (@The-SocialLion),Vigneshwar K R (@ToastCoder)
+ Vishal Balaji Sivaraman (@The-SocialLion)
+ 
+ Vigneshwar K R (@ToastCoder)
 
 ### Installation:
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install electronics-calc.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install electronicscalc.
 
 ```bash
 pip install electronicscalc
 ```
 
-### Importing  electronics-calc to your program:
+### To import electronicscalc:
 
 ```python
 import  electronicscalc
 ```
-
-
-
 
 
 ## License:
