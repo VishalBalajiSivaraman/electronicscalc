@@ -16,8 +16,8 @@ setup(
   long_description_content_type = "text/markdown",
   author = ['Vishal Balaji Sivaraman','Vigneshwar K R'],
   author_email = 'vb.sivaraman_official@yahoo.com',
-  url = 'https://github.com/The-SocialLion/Electronics-calc',
-  download_url = 'https://github.com/The-SocialLion/Electronics-calc/archive/master.zip',
+  url = 'https://github.com/The-SocialLion/electronicscalc',
+  download_url = 'https://github.com/The-SocialLion/electronicscalc/archive/master.zip',
   keywords = ['ELECTRONICS', 'CALCULATOR', 'ELECTRONIC-CALCULATIONS','CIRCUIT-DESIGN','PLOT'],   
   install_requires=[           
           'numpy',
