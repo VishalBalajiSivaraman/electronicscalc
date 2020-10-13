@@ -24,7 +24,6 @@ setup(
           'pandas',
           'Matplotlib',
           'SciPy',
-          'math'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',
