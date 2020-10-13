@@ -10,7 +10,7 @@ Under Development (Early release)
 
  [Vishal Balaji Sivaraman](https://github.com/TheSocialLion)
  
- [Vigneshwar K R](https://github.com/ToastCoder)
+ [Vigneshwar Ravichandar](https://github.com/ToastCoder)
 
 ### Installation:
 
