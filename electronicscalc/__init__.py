@@ -4,7 +4,7 @@
 # Contact email address: vb.sivaraman_official@yahoo.com , vicky.pcbasic@gmail.com
 # Modules required: numpy,pandas,matplotlib,scipy,math
 
-# Command to install electronics-calc:
+# Command to install electronicscalc:
 # >>> pip install electronicscalc
 
 # Essential modules
@@ -14,13 +14,13 @@ import matplotlib.pyplot as plt
 from scipy import interpolate as ie
 import math as mt
 
+# LIC
 def cmrr_opamp(Ad,Ac):
   A=abs(Ad/Ac)
   print("CMRR is ",A)
   cmrr=20*(mt.log10(A))
   print("CMRR in DB is",cmrr)
-
-
+# LIC
 def gain_differentialopamp(v1,v2,v,c):
     import math as mt
     if c==1:
@@ -33,6 +33,7 @@ def gain_differentialopamp(v1,v2,v,c):
       vc1=(abs(v1+v2)/2)
       Ac=(v/vc1)
       print("Common mode gain in DB :",Ac)
+ # LIC     
 def gain_opamp(Rf,Ri,g,c):
   if c==1:
     Ri=Ri*1000
@@ -52,7 +53,7 @@ def gain_opamp(Rf,Ri,g,c):
       return True
     else:
       return False
-
+# LIC    
 # plot_opamplifier() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_opamplifier(A,T,c)
 # T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] ,c:condition
@@ -104,7 +105,7 @@ def plot_opamplifier(A,T,c):
    plt.xlabel('Time in ms')
    plt.ylabel('Amplitude in volts')
    plt.show()
-  
+# analog and digital lab  
 # plot_astable_multivibrator() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_astable_multivibrator(A,T)
 # T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] 
@@ -119,8 +120,8 @@ def plot_astable_multivibrator(A,T):
   plt.axhline(y=0, color='k')
   plt.xlabel('Time in ms')
   plt.ylabel('Amplitude in volts')
-  plt.show()
- 
+  plt.show()  
+# analog and digital lab  
 # plot_clamper() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_clamper(A,T,I,c)
 # A: is a list of amplitudes given in the format as [+A,-A,+A ...] , T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....]  , D:is a list of values of the DC load line ,c: condition 
@@ -178,8 +179,7 @@ def plot_clamper(A,T,D,c):
    plt.xlabel('Time in ms')
    plt.ylabel('Amplitude in volts')
    plt.show()
-
-
+# analog and digital lab  
 # plot_clipper() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_clipper(A,T,I,c)
 # A: is a list of amplitudes given in the format as [+A,-A,+A ...] , T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....]  , I:is a list of values which are used to clip the waveform ,c: condition 
@@ -235,8 +235,8 @@ def plot_clipper(A,T,I,c):
    plt.axhline(y=0, color='k')
    plt.xlabel('Time in ms')
    plt.ylabel('Amplitude in volts')
-   plt.show()
-    
+   plt.show()    
+# analog and digital lab     
 # hartley_fbo() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: hartley_fbo(l1,l2,T,c)
 # l1:value of inductor1 ,l2:value of inductor2 ,T:time interval ,c:condition
@@ -261,7 +261,7 @@ def hartley_fbo(l1,l2,T,c):
     else:
          return False
          break
-        
+# analog and digital lab          
 # plot_tuned_amplifier() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_tuned_amplifier(G,F)
 # G:is a list of all the Gain values in DB , F:is a list of all the Frequencies
@@ -285,7 +285,7 @@ def plot_tuned_amplifier(G,F):
   plt.xlabel('Frequency in KHz')
   plt.ylabel('Gain in DB')
   plt.show()
-
+# analog and digital lab  
 # plot_rco() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_rco(A,T)
 # T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] 
@@ -306,6 +306,7 @@ def plot_oscillator(A,T):
   plt.xlabel('Time in ms')
   plt.ylabel('Amplitude in volts')
   plt.show()
+# analog and digital lab   
 # rcphase_fbo() - Returns the calculated and output frequency based on the given data.
 # Syntax: rcphase_fbo(R,Rc,T,c)
 # R:feedback resistor,Rc:collector resistor,T:Time period,c:Condition
@@ -329,6 +330,7 @@ def rcphase_fbo(R,Rc,T,c):
     else:
       return False
     break
+# analog and digital lab      
 # plot_feedback_amplifier() - Sketches the graph between the Gain and Frequency as per the given input data.
 # Syntax: plot_feedback_amplifier(G,F)
 # F:list of all frequncies,G:list of all gain values in DB
@@ -344,6 +346,7 @@ def plot_feedback_amplifier(G,F):
   plt.xlabel('frequency in KHz')
   plt.ylabel('Gain in DB')
   plt.show()
+# analog and digital lab    
 # gain_calc()- Tabulates the results in a data frame as per the given data.
 # Syntax: gain_calc(Vo,Vi)
 # Vo:list of all the output voltages recorded during experiment,Vi:Input voltage recorded during the experiment
@@ -357,6 +360,7 @@ def gain_calc(Vo,Vi):
   data = np.array([Vo,Gain,gain])
   dataset = pd.DataFrame({'Vo(Volts)': data[0,:], 'Gain': data[1,:], 'Gain(DB)': data[2,:]})
   print(dataset)
+# analog and digital lab    
 # design() - Sketches the graph between the Gain and Frequency as per the given input data.
 # Syntax: design(Rc,B,c,d)
 # Rc:Collector resistance,B:Gain of transistor,c:Condition,d:Condition
