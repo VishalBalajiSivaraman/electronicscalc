@@ -25,12 +25,12 @@ def cmrr_opamp(Ad,Ac):
 def gain_differentialopamp(v1,v2,v,c):
     import math as mt
     if c==1:
-      print("differential mode")
+      print("Differential mode")
       vd1=abs(v2-v1)
       Ad=(v/vd1)
       print("Differential mode gain in DB: ",Ad)
     else:
-      print("common mode")
+      print("Common mode")
       vc1=(abs(v1+v2)/2)
       Ac=(v/vc1)
       print("Common mode gain in DB :",Ac)
@@ -39,7 +39,7 @@ def gain_opamp(Rf,Ri,g,c):
     Ri=Ri*1000
     Rf=Rf*1000
     G=-1*(Rf/Ri)
-    print("calculated gain - inverting mode",abs(G))
+    print("Calculated gain - Inverting mode",abs(G))
     if (g<abs(G)) or (g==abs(G)):
       return True
     else:
@@ -48,7 +48,7 @@ def gain_opamp(Rf,Ri,g,c):
     Ri=Ri*1000
     Rf=Rf*1000
     G=1+(Rf/Ri)
-    print("calculated gain - non-inverting mode",abs(G))
+    print("Calculated gain - Non-inverting mode",abs(G))
     if (g<abs(G)) or (g==abs(G)):
       return True
     else:
@@ -63,7 +63,7 @@ def plot_opamplifier(A,T,c):
   if c==0:
    p=np.array(T)
    q=np.array(A)/2
-   plt.title('inverting amplifier : amplitude vs time')
+   plt.title('Inverting amplifier : Amplitude vs Time')
    x=np.linspace(p.min(),p.max(),100)
    a_BSpline=ie.make_interp_spline(p,q)
    y=a_BSpline(x) 
@@ -93,7 +93,7 @@ def plot_opamplifier(A,T,c):
   else:
    p=np.array(T)
    q=np.array(A)/2
-   plt.title('Input waveform : amplitude vs time')
+   plt.title('Input waveform : Amplitude vs Time')
    x=np.linspace(p.min(),p.max(),100)
    a_BSpline=ie.make_interp_spline(p,q)
    y=a_BSpline(x) 
@@ -137,8 +137,8 @@ def plot_clamper(A,T,D,c):
     a_BSpline = ie.make_interp_spline(p,q)
     y=a_BSpline(x) 
     plt.plot(x,y,label="Generated Graph")
-    plt.plot(p,q,marker='o',label="your graph")
-    plt.plot(p,z,marker='x',label=' Dc load line')
+    plt.plot(p,q,marker='o',label="Your graph")
+    plt.plot(p,z,marker='x',label=' DC load line')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     plt.grid(True,which='both')
     plt.axhline(y=0, color='k')
@@ -167,7 +167,7 @@ def plot_clamper(A,T,D,c):
   else:
    p=np.array(T)
    q=np.array(A)
-   plt.title(' Input waveform: amplitude vs time')
+   plt.title(' Input waveform: Amplitude vs Time')
    x=np.linspace(p.min(),p.max(),100)
    a_BSpline = ie.make_interp_spline(p,q)
    y=a_BSpline(x) 
@@ -197,7 +197,7 @@ def plot_clipper(A,T,I,c):
     y=a_BSpline(x) 
     plt.plot(x,y,label="Generated Graph")
     plt.plot(p,q,marker='o',label="your graph")
-    plt.plot(p,z,marker='x',label=' positive Clipped waveform')
+    plt.plot(p,z,marker='x',label=' Positive Clipped waveform')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     plt.grid(True,which='both')
     plt.axhline(y=0, color='k')
@@ -209,13 +209,13 @@ def plot_clipper(A,T,I,c):
     p=np.array(T)
     q=np.array(A)/2
     z=np.array(e)
-    plt.title('negative clipper: amplitude vs time')
+    plt.title('Negative Clipper: Amplitude vs Time')
     x=np.linspace(p.min(),p.max(),100)
     a_BSpline = ie.make_interp_spline(p,q)
     y=a_BSpline(x) 
     plt.plot(x,y,label="Generated Graph")
     plt.plot(p,q,marker='o',label="your graph")
-    plt.plot(p,z,marker='x',label=' negative Clipped waveform')
+    plt.plot(p,z,marker='x',label=' Negative Clipped waveform')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     plt.grid(True,which='both')
     plt.axhline(y=0, color='k')
@@ -225,7 +225,7 @@ def plot_clipper(A,T,I,c):
   else:
    p=np.array(T)
    q=np.array(A)/2
-   plt.title('Input waveform: amplitude vs time')
+   plt.title('Input waveform: Amplitude vs Time')
    x=np.linspace(p.min(),p.max(),100)
    a_BSpline = ie.make_interp_spline(p,q)
    y=a_BSpline(x) 
@@ -255,7 +255,7 @@ def hartley_fbo(l1,l2,T,c):
   g=(2*3.14*((L*C)**0.5))
   F=1/g
   while F < f:
-    print("calculated frequency",F)
+    print("Calculated frequency",F)
     print("Output frequency",fr)
     if fr < f or fr==f:
           return True
@@ -295,7 +295,7 @@ def plot_tuned_amplifier(G,F):
 def plot_oscillator(A,T):
   p=np.array(T)
   q=np.array(A)/2
-  plt.title('Oscillator-plot : amplitude vs time')
+  plt.title('Oscillator-plot : Amplitude vs Time')
   x=np.linspace(p.min(),p.max(),100)
   a_BSpline=ie.make_interp_spline(p,q)
   y=a_BSpline(x) 
@@ -323,8 +323,8 @@ def rcphase_fbo(R,Rc,T,c):
   g=(((6+(4*rc/r))**0.5)*2*3.14*r*C)
   F=1/g
   while  F < f:
-    print("calculated frequency",F)
-    print("Output frequency",fr)
+    print("Calculated Frequency",F)
+    print("Output Frequency",fr)
     if fr < F or fr==F:
       return True
     else:
@@ -338,7 +338,7 @@ def rcphase_fbo(R,Rc,T,c):
 def plot_feedback_amplifier(G,F):
   p=np.array(F)
   q=np.array(G)
-  plt.title('Feedback Amplifier: gain vs frequency')
+  plt.title('Feedback Amplifier: Gain vs Frequency')
   plt.plot(p,q,marker='o')
   plt.grid(True,which='both')
   plt.axhline(y=0, color='k')
@@ -372,12 +372,12 @@ def design(Rc,B,c,d):
   if c==1:
     Ic=0
     Vce=Vcc
-    print("cutoff region Ic,vce=",Ic,Vce)
+    print("Cutoff Region Ic,vce=",Ic,Vce)
   else:
     if d==1:
       Vbe=0.3
-      print("cut off voltage Vbe=",Vbe)
-      print("saturartion reagion")
+      print("Cut Off Voltage Vbe=",Vbe)
+      print("Saturation Region")
       Ic=(Vcc-Ve)/Rc
       Icq=Ic/2
       Ib=(Icq/B)
@@ -386,14 +386,14 @@ def design(Rc,B,c,d):
       R1=(Vcc-(Vbe+Ve))/(11*Ib)
       R2=(Vbe+Ve)/(10*Ib)
       Re=(Ve/IE)*1000
-      print("circuit desighn.....")
+      print("Circuit Design.....")
       print("R1*10^3,R2*10^3,Re,C1*10^-6,C2*10^-6,BC1*10^-6 OR Bc2*10^-6 :",R1,R2,Re,C1,C2,BC1,BC2)
-      print("calculations....")
+      print("Calculations....")
       print("Ic*10^-3,IB*10^-6,Icq*10^-3,Ie*10^-3:",Ic,IB,Icq,IE)
     else:
       Vbe=0.7
-      print("cut off voltage Vbe=",Vbe)
-      print("saturartion reagion")
+      print("Cut Off Voltage Vbe=",Vbe)
+      print("Saturation Region")
       Ic=(Vcc-Ve)/Rc
       Icq=Ic/2
       Ib=(Icq/B)
@@ -402,7 +402,7 @@ def design(Rc,B,c,d):
       R1=((Vcc-(Vbe+Ve))/(11*Ib))
       R2=((Vbe+Ve)/(10*Ib))
       Re=(Ve/IE)*1000
-      print("circuit desighn.....")
+      print("Circuit Design.....")
       print("R1*10^3,R2*10^3,Re,C1*10^-6,C2*10^-6,BC1*10^-6 OR Bc2*10^-6 :",R1,R2,Re,C1,C2,BC1,BC2)
-      print("calculations....")
+      print("Calculations....")
       print("Ic*10^-3,IB*10^-6,Icq*10^-3,Ie*10^-3:",Ic,IB,Icq,IE)
