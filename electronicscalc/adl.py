@@ -95,6 +95,7 @@ def clamperPlot(A,T,D,c):
 # T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....] , A: is a list of amplitudes given in the format as [-A,+A,-A,+A ...] 
 # Return type: graph
 # Note-Before executing this module do kindly check if the length of both lists are same 
+
 def plot_astable_multivibrator(A,T):
   p=np.array(T)
   q=np.array(A)
@@ -112,6 +113,7 @@ def plot_astable_multivibrator(A,T):
 # A: is a list of amplitudes given in the format as [+A,-A,+A ...] , T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....]  , D:is a list of values of the DC load line ,c: condition 
 # Return type: graph
 # Note-Before executing this module do kindly check if the length of both lists are same 
+
 def plot_clamper(A,T,D,c):
   if c==0:     
     p=np.array(T)
