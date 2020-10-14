@@ -85,7 +85,68 @@ def clamperPlot(A,T,D,c):
         plt.ylabel('Amplitude in volts')
         plt.show()
 
+# clipperPlot() - Sketches the graph between the amplitude and time as per the given input data.
+# Syntax: clipperPlot(A,T,I,c)
+# A: is a list of amplitudes given in the format as [+A,-A,+A ...] , T:is a list of all the time intervals specified in the format as[T,2*T,3*T,4*T.....]  , I:is a list of values which are used to clip the waveform ,c: condition 
+# Return type: graph
+# Note-Before executing this module do kindly check if the length of both lists are same 
+def clipperPlot(A,T,I,c):
 
+    if c==0:     
+        p=np.array(T)
+        q=np.array(A)/2
+        z=np.array(I)
+        plt.title('positive clipper: amplitude vs time')
+        x=np.linspace(p.min(),p.max(),100)
+        a_BSpline = ie.make_interp_spline(p,q)
+        y=a_BSpline(x)
+
+        plt.plot(x,y,label="Generated Graph")
+        plt.plot(p,q,marker='o',label="your graph")
+        plt.plot(p,z,marker='x',label=' Positive Clipped waveform')
+        plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+        plt.grid(True,which='both')
+        plt.axhline(y=0, color='k')
+        plt.xlabel('Time in ms')
+        plt.ylabel('Amplitude in volts')
+        plt.show()
+
+    elif c==1:
+        e = [i * -1 for i in c]
+        p=np.array(T)
+        q=np.array(A)/2
+        z=np.array(e)
+        plt.title('Negative Clipper: Amplitude vs Time')
+        x=np.linspace(p.min(),p.max(),100)
+        a_BSpline = ie.make_interp_spline(p,q)
+        y=a_BSpline(x)
+
+        plt.plot(x,y,label="Generated Graph")
+        plt.plot(p,q,marker='o',label="your graph")
+        plt.plot(p,z,marker='x',label=' Negative Clipped waveform')
+        plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+        plt.grid(True,which='both')
+        plt.axhline(y=0, color='k')
+        plt.xlabel('Time in ms')
+        plt.ylabel('Amplitude in volts')
+        plt.show()
+
+    else:
+        p=np.array(T)
+        q=np.array(A)/2
+        plt.title('Input waveform: Amplitude vs Time')
+        x=np.linspace(p.min(),p.max(),100)
+        a_BSpline = ie.make_interp_spline(p,q)
+        y=a_BSpline(x)
+
+        plt.plot(x,y,label="Generated Graph")
+        plt.plot(p,q,marker='o',label="your graph")
+        plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+        plt.grid(True,which='both')
+        plt.axhline(y=0, color='k')
+        plt.xlabel('Time in ms')
+        plt.ylabel('Amplitude in volts')
+        plt.show()
 
 
 """
@@ -167,7 +228,7 @@ def plot_clamper(A,T,D,c):
    plt.ylabel('Amplitude in volts')
    plt.show()
 """
-
+"""
 # analog and digital lab  
 # plot_clipper() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_clipper(A,T,I,c)
@@ -224,7 +285,9 @@ def plot_clipper(A,T,I,c):
    plt.axhline(y=0, color='k')
    plt.xlabel('Time in ms')
    plt.ylabel('Amplitude in volts')
-   plt.show()    
+   plt.show()  
+
+   """  
 # analog and digital lab     
 # hartley_fbo() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: hartley_fbo(l1,l2,T,c)
