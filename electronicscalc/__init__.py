@@ -15,8 +15,11 @@ from scipy import interpolate as ie
 import math as mt
 
 # IMPORTING SUB-MODULES
-from . import adl
-from adl import *
+from . import cds
+from cds import *
 
 from . import lic
 from lic import *
+
+from . import adl
+from adl import *
