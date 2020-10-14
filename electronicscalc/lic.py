@@ -157,7 +157,7 @@ def gain_opamp(Rf,Ri,g,c):
 
 
 
- """     
+"""     
 # LIC    
 # plot_opamplifier() - Sketches the graph between the amplitude and time as per the given input data.
 # Syntax: plot_opamplifier(A,T,c)
