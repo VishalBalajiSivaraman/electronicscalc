@@ -305,10 +305,11 @@ def gainFreqPlot(Rc,B,c,d):
             Re=(Ve/IE)*1000
 
             print("Circuit Design:")
-            print("R1 in 10^3 Ohms: {0} \nR2 in 10^3 Ohms: {1}\nRe in Ohms: {2}\nC1 in 10^-6 Farads: {3}\nC2 in 10^-6 Farads: {4}\nBc1 in 10^-6 Farads: {5}\nBc2 in 10^-6 Farads: {6}".format(R1,R2,Re,C1,C2,BC1,BC2))
+            print("R1 in 10^3 Ohm: {0}\tR2 in 10^3 Ohm: {1}\tRe in Ohm: {2}".format(R1,R2,Re))
+            print("C1 in 10^-6 Farad: {0}\tC2 in 10^-6 Farad: {1}\tBc1 in 10^-6 Farad: {2}\tBc2 in 10^-6 Farad: {3}".format(C1,C2,BC1,BC2))
             print("Calculations:")
-            print("Ic*10^-3,IB*10^-6,Icq*10^-3,Ie*10^-3:",Ic,IB,Icq,IE)
-
+            print("Ic in 10^-3 Ampere: {0}\tIb in 10^-6 Ampere: {1}\tIcq in 10^-3 Ampere: {2}\tIe in 10^-3 Ampere: {3}".format(Ic,IB,Icq,IE))
+            
         else:
             Vbe=0.7
             print("Cut Off Voltage Vbe=",Vbe)
@@ -323,9 +324,10 @@ def gainFreqPlot(Rc,B,c,d):
             Re=(Ve/IE)*1000
 
             print("Circuit Design:")
-            print("R1*10^3,R2*10^3,Re,C1*10^-6,C2*10^-6,BC1*10^-6 OR Bc2*10^-6 :",R1,R2,Re,C1,C2,BC1,BC2)
+            print("R1 in 10^3 Ohm: {0}\tR2 in 10^3 Ohm: {1}\tRe in Ohm: {2}".format(R1,R2,Re))
+            print("C1 in 10^-6 Farad: {0}\tC2 in 10^-6 Farad: {1}\tBc1 in 10^-6 Farad: {2}\tBc2 in 10^-6 Farad: {3}".format(C1,C2,BC1,BC2))
             print("Calculations:")
-            print("Ic*10^-3,IB*10^-6,Icq*10^-3,Ie*10^-3:",Ic,IB,Icq,IE)
+            print("Ic in 10^-3 Ampere: {0}\tIb in 10^-6 Ampere: {1}\tIcq in 10^-3 Ampere: {2}\tIe in 10^-3 Ampere: {3}".format(Ic,IB,Icq,IE))
 
  #OLD CODE     
 """
